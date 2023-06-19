@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/two-sum/
+
 class Leetcode150
     def two_sum(nums, target)
         hash = {}
