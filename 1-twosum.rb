@@ -14,7 +14,7 @@ class Leetcode150
     end
 end
 
-nums = [3,3] 
+nums = [2,3,4,7] 
 target = 6
 
 test = Leetcode150.new
