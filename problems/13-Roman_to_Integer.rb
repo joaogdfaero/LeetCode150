@@ -2,13 +2,23 @@
 # @return {Integer}
 def roman_to_int(s)
     number = 0
+    skip_next = false
 
     s.chars.each_with_index do |char, index|
+        if skip_next == true
+            skip_next = false
+            next
+        end
+
         if char == "I" 
             if s[index + 1] == "V"
                 number = number + 4
+                skip_next = true
+                next 
             elsif s[index + 1] == "X"
                 number = number + 9
+                skip_next = true
+                next 
             else
                 number = number + 1
             end 
@@ -17,8 +27,12 @@ def roman_to_int(s)
         elsif char == "X"
             if s[index + 1] == "L"
                 number = number + 40
+                skip_next = true
+                next 
             elsif s[index + 1] == "C"
                 number = number + 90
+                skip_next = true
+                next 
             else
                 number = number + 10
             end 
@@ -27,8 +41,12 @@ def roman_to_int(s)
         elsif char == "C"
             if s[index + 1] == "D"
                 number = number + 400
+                skip_next = true
+                next 
             elsif s[index + 1] == "M"
                 number = number + 900
+                skip_next = true
+                next 
             else
                 number = number + 100
             end
@@ -41,3 +59,6 @@ def roman_to_int(s)
 
     return number 
 end
+
+s = "IV"
+p roman_to_int(s)
