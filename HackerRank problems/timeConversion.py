@@ -6,14 +6,14 @@ def timeConversion(s):
 
     # SE FOR PM, SOMA 12, A NAO SER QUE SEJA 12PM, AI NAO FAZ NADA
     if am_pm == 'PM':
-        if hours != '12':
+        if hours != 12:
             # soma 12
             new_hours = (hours + 12)
         else:
             return s[:-2]
     # SE FOR AM, NAO SOMA NADA, A NAO SER QUE SEJA 12AM, AI REMOVE 12
     elif am_pm == 'AM':
-        if hours == '12':
+        if hours == 12:
             # remove 12
             new_hours = (hours - 12)
         else:
@@ -25,5 +25,5 @@ def timeConversion(s):
     return new_time_str 
              
 
-s = '07:05:45PM'
+s = '12:40:22AM'
 print(timeConversion(s))
