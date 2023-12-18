@@ -24,6 +24,5 @@ def timeConversion(s):
     
     return new_time_str 
              
-
 s = '12:40:22AM'
 print(timeConversion(s))
